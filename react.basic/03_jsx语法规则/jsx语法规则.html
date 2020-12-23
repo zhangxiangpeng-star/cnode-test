@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsx语法规则</title>
+    <style>
+        .color{
+            background: rgb(134, 48, 48);
+            width: 200px;
+        }
+        .ccc{
+            background: rgb(39, 151, 48);
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="test"></div>
+    <!-- 引入库 -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+    const a="qqqq";
+    const b="sdfeeeDD";
+    const VDOM= 
+        <div>
+             <h1 className="color" id={a.toLocaleLowerCase()}>
+                <span style={{color:"red"}}>{b.toLocaleLowerCase()}</span>
+            </h1>
+            <h1 className="color" id={a.toUpperCase()}>
+                <span style={{color:"red"}}>{b.toLocaleUpperCase()}</span>
+            </h1>
+            <input type="text"/>
+        </div>
+    ReactDOM.render(VDOM,document.getElementById("test"))
+    </script>
+</body>
+</html>
