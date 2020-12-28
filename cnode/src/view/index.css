@@ -1,0 +1,8 @@
+.pageWrap{
+    min-height:100vh;
+}
+#logo{
+    color: rgb(35, 184, 97);
+    margin-bottom: 0;
+    text-align: center;
+}
