@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类式组件</title>
+</head>
+<body>
+    <div id="test1"></div>
+    <div id="test2"></div>
+    <div id="test3"></div>
+
+    <!-- 引入库 -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+    class Mycomponent extends React.Component{
+      
+     
+    render(){
+        const {name,age,sex}=this.props;
+        return (
+            <ul>
+            <li>姓名：{name}</li>    
+            <li>年龄：{age+1}</li>    
+            <li>性别：{sex}</li>    
+            </ul>
+        )
+    }
+    }
+    
+    ReactDOM.render(<Mycomponent name="老张" age={15} sex="男"/>,document.getElementById("test1"))
+    ReactDOM.render(<Mycomponent name="老王" age={16} sex="女"/>,document.getElementById("test2"))
+    //ReactDOM.render(<Mycomponent name="老李" age="20" sex="男"/>,document.getElementById("test3")) ;
+    const p={name:"老李", age:20,sex:"男"}
+    ReactDOM.render(<Mycomponent{...p}/>,document.getElementById("test3")) ;
+    //...p 由于babel和react.development.js作用，可以在标签展开对象，其他地方不可以展开对象
+    /* 
+    可以用 const person2={...person} 来复制一个对象 */
+  
+        
+   
+    </script>
+</body>
+</html>
