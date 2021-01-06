@@ -1,4 +1,4 @@
-import React,{Component} from "react";
+/* import React,{Component} from "react";
 import {Switch,Route,Redirect} from "react-router-dom";
 import Index from "../view/IndexI/Index";
 import GittingStarted from "../view/GittingStarted/GittingStartded";
@@ -25,4 +25,4 @@ export default class RouterIndex extends Component {
             </Switch>
         );
     }
-}
+} */

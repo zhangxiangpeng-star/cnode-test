@@ -1,11 +1,36 @@
 //import Layout from 'antd/lib/layout/layout'
-import React, { Component } from 'react'
-import {Layout} from "antd";
+import React, { Component } from 'react';
+import {Link} from "react-router-dom";
+import {Layout,Menu} from "antd";
 export default class main_header extends Component {
-    render() {
-        return (<Layout.Header>
-            <h1 id="logo">cNode</h1>
-            </Layout.Header>
-        )
+    render(){
+        return(
+        
+                <div id  = 'box'>
+                    <span id = "logo">cnode</span>
+                    <div className = "search">
+                        <form>
+                        <input type="text" className = 'input' />
+                        </form>
+                    </div>
+
+                    <ul id= 'nav'>
+                    <li><Link to="/signin/"   >登录</Link></li>
+                    <li><Link to="/resgister/"   >注册</Link></li>
+                    <li><Link to="/about/"  >关于</Link></li>
+                    <li><Link to="/api/"    >API</Link></li>
+                    <li><Link to="/gittingstarted/"   >新手入门</Link></li>
+                    <li><Link to="/index/all"  >首页</Link></li>
+                    
+                    
+                    
+                    
+                  
+                   
+                   
+                       
+                    </ul>
+                </div>
+            )
     }
 }

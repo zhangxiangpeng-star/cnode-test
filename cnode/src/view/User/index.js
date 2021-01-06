@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
-export default class SignIn extends Component {
+export default class index extends Component {
     render() {
         return (
             <div>
-                '登录'
-          </div>
+                4564564
+            </div>
         )
     }
 }
