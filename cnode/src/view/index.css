@@ -22,6 +22,11 @@
 #nav{
     float: right;
 } */
+.wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 #box{
     float: left;
     width: 100%;
@@ -76,4 +81,18 @@
     /* 回复，访问次数 */
     width: 70px;
     display: inline-block;
+}
+.replylist .ant-list-item-meta-avatar{
+    display: block;
+}
+
+/* 用户头像 */
+.useAvatar{
+    margin: 0 auto;
+    width: 90px;
+    height: 90px;
+}
+.useDetails{
+    margin: 0 auto;
+    font-size: 16px;
 }

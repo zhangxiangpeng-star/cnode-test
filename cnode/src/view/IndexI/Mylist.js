@@ -1,13 +1,39 @@
 import React, { Component } from 'react'
 import {List,Avatar} from "antd"
 import {Link} from "react-router-dom"
-import data from './data'
+import {connect} from "react-redux"
+import axios from"axios"
 import MyTag from "./MyTag"
-export default class MyList extends Component {
+ class MyList extends Component {
+     constructor(arg){
+         super(arg)
+         this.state={
+             page:1
+             
+         };
+         this.getDate();
+     }
+    getDate(){
+        this.props.dispatch((dispatch)=>{
+            axios.get(`https://cnodejs.org/api/v1/topics?tab=${this.props.tab}&page=${this.state.page}&limit=15`)
+                .then((res)=>{
+                    dispatch({
+                        type:"LIST_UPDATA_SUCC",
+                        data:res.data
+                    });
+                })
+                .catch((error)=>{
+                    dispatch({
+                        type:"LIST_UPDATA_ERROR",
+                        data:error,
+                })
+        })
+    })}
     render() {
-        /* console.log(data); */
+        let {data}=this.props;
+        console.log(this.props);
         return (
-            <List dataSource={data.data} 
+            <List dataSource={data} 
             renderItem = {item=>(<List.Item
                 actions={[item.create_at.split("T")[0]]}
                 key={item.id}>
@@ -32,3 +58,4 @@ export default class MyList extends Component {
         )
     }
 }
+export default connect(state=>state.list)(MyList);

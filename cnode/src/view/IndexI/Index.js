@@ -4,6 +4,7 @@ import {Menu} from "antd"
 import Mylist from "./Mylist"
 export default class Index extends Component {
     render() {
+        let tab=this.props.match.params.id;
         return (
             <div>
             <Menu mode ='horizontal' >
@@ -16,7 +17,8 @@ export default class Index extends Component {
 
             </Menu>
             <div id="indexList">
-             <Mylist/>
+             <Mylist
+                tab={tab}/>
              </div>
             </div>
         )

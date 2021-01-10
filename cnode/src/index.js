@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import App from './App'
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom"
-
+import {createStore,applyMiddleware} from "redux"
+import thunk from "redux-thunk"            //redux需要加强
+import {Provider} from "react-redux"
+import reducer from "./reducers/index"
+const store=createStore(reducer,applyMiddleware(thunk));
 ReactDOM.render(
   <BrowserRouter>
+  <Provider store={store}>    {/* 根组件 */}
     <App />
+    </Provider>
   </BrowserRouter>
  , document.getElementById('root')
 );

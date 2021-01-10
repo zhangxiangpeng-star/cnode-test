@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Tag} from "antd"
+import {Tag} from "antd"
 /* let tab={
     top:{
         color:"magenta",
