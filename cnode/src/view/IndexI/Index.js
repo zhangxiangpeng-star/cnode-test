@@ -9,11 +9,11 @@ export default class Index extends Component {
             <div>
             <Menu mode ='horizontal' >
                 <Menu.Item> <Link to="/index/all">全部</Link></Menu.Item>
-                <Menu.Item> <Link to="/index/essence">精华</Link></Menu.Item>
+                <Menu.Item> <Link to="/index/good">精华</Link></Menu.Item>
                 <Menu.Item> <Link to="/index/share">分享</Link></Menu.Item>
                 <Menu.Item> <Link to="/index/ask">问答</Link></Menu.Item>
-                <Menu.Item> <Link to="/index/recruit">招聘</Link></Menu.Item>
-                <Menu.Item> <Link to="/index/debugging">客户端测试</Link></Menu.Item>
+                <Menu.Item> <Link to="/index/job">招聘</Link></Menu.Item>
+                <Menu.Item> <Link to="/index/dev">客户端测试</Link></Menu.Item>
 
             </Menu>
             <div id="indexList">

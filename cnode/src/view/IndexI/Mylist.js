@@ -11,11 +11,20 @@ import MyTag from "./MyTag"
              page:1
              
          };
-         this.getDate();
+         this.getData(this.props.tab);
      }
-    getDate(){
+    shouldComponentUpdate(nextProps,nexState){
+         if(this.props.tab!== nextProps.tab){
+            this.getData(nextProps.tab)
+            return false;
+         }
+         return true;
+     }
+
+
+    getData(tab){
         this.props.dispatch((dispatch)=>{
-            axios.get(`https://cnodejs.org/api/v1/topics?tab=${this.props.tab}&page=${this.state.page}&limit=15`)
+            axios.get(`https://cnodejs.org/api/v1/topics?tab=${tab}&page=${this.state.page}&limit=15`)
                 .then((res)=>{
                     dispatch({
                         type:"LIST_UPDATA_SUCC",
