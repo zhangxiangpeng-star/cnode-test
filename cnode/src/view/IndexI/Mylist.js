@@ -3,7 +3,15 @@ import {List,Avatar} from "antd"
 import {Link} from "react-router-dom"
 import {connect} from "react-redux"
 import axios from"axios"
-import MyTag from "./MyTag"
+ import MyTag from "./MyTag" 
+const tabSchema = {
+    all: '全部',
+    good: '精华',
+    share: '分享',
+    ask: '问答',
+    job: '招聘',
+    dev: '测试',
+};
  class MyList extends Component {
      constructor(arg){
          super(arg)
@@ -51,8 +59,9 @@ import MyTag from "./MyTag"
                 avatar={<Avatar src= {item.author.avatar_url} />}      // 这个不是很懂，以后注意看看      
                 //题目
                 title={<div><div className="count">
-                    {item.reply_count}/{item.visit_count}</div> <MyTag/>  
-                    <Link to={"/details/"+item.id}> { item.title } </Link> </div>}
+                    {item.reply_count}/{item.visit_count}</div> {<MyTag/>}  
+                    <Link to={"/details/"+item.id}> { item.title } </Link>
+                    </div>}
        /*          description={<p><Link to={"/user/"+item.author.loginname}>
                     {item.author.loginname}</Link>
                     发表于：{item.create_at.split("T")[0]}

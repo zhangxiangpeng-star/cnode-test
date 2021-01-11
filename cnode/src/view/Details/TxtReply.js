@@ -3,9 +3,10 @@ import {Card,Avatar,List} from "antd";
 import {Link} from "react-router-dom"
 export default class TxtReply extends Component {
     render() {
-        let {replyCount,replies} =this.props;
-        console.log(replies[0])
+        let {loading,replyCount,replies} =this.props;
+       /*  console.log(replies[0]) */
         return <Card 
+                loading={loading}
                 title={replyCount+"回复"}
                 type="inner"
             >
