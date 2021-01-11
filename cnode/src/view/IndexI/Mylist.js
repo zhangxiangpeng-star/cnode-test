@@ -19,20 +19,26 @@ const tabSchema = {
              page:1
              
          };
-         this.getData(this.props.tab);
+         this.getData(this.props.tab,this.state.page);
      }
     shouldComponentUpdate(nextProps,nexState){
+        if(this.state.page!==nexState.page){
+            this.getData(nextProps.tab,nexState.page);
+            return false;
+        }
          if(this.props.tab!== nextProps.tab){
-            this.getData(nextProps.tab)
+             this.state.page=1
+            this.getData(nextProps.tab,1);
+           
             return false;
          }
          return true;
      }
 
 
-    getData(tab){
+    getData(tab,page){
         this.props.dispatch((dispatch)=>{
-            axios.get(`https://cnodejs.org/api/v1/topics?tab=${tab}&page=${this.state.page}&limit=15`)
+            axios.get(`https://cnodejs.org/api/v1/topics?tab=${tab}&page=${page}&limit=10`)
                 .then((res)=>{
                     dispatch({
                         type:"LIST_UPDATA_SUCC",
@@ -48,9 +54,18 @@ const tabSchema = {
     })}
     render() {
         let {data}=this.props;
-        console.log(this.props);
+      /*   console.log(this.props); */
+        let pagination={
+            current:this.state.page,
+            pageSize:10,
+            total:1000,
+            onChange:((current)=>{
+                this.setState({page:current})
+            })
+        }
         return (
-            <List dataSource={data} 
+            <List dataSource={data}
+            pagination={pagination} 
             renderItem = {item=>(<List.Item
                 actions={[item.create_at.split("T")[0]]}
                 key={item.id}>
