@@ -1,11 +1,7 @@
 @import '~antd/dist/antd.css';
 /* 
 }
-#logo{
-    color: rgb(35, 184, 97);
-    margin-bottom: 0;
-    text-align: center;
-}
+
 .main_header{
     color: rgb(0, 0, 0);
 }
@@ -15,10 +11,7 @@
     background: #333;
 
 }
-#logo{
-    float: left;
 
-}
 #nav{
     float: right;
 } */
@@ -32,6 +25,7 @@
     width: 100%;
     height: 50px;
     background: #333;
+    
 }
 #logo{
     float: left;
@@ -98,4 +92,22 @@
 }
 .wrap img{
     max-width: 100%;
+}
+#footer{
+    line-height: 13px;
+}
+/* .controls{
+    margin: 0 auto;
+}
+.input-xlarge{
+background-repeat: no-repeat; 
+background-attachment: scroll;
+background-size: 16px 18px; 
+background-position: 98% 50%;
+cursor: auto;} */
+.ant-select-selection-item,.ant-select-selector{
+    display: none;
+}
+#content{
+    margin:0 450px;
 }

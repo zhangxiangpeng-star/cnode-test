@@ -2,12 +2,17 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 import {Layout,Menu} from "antd";
+import tupian from "../picture/cnodejs_light.svg"
 export default class main_header extends Component {
     render(){
         return(
-        
                 <div id  = 'box'>
-                    <span id = "logo">cnode</span>
+                    <span id = "logo"> 
+                    <img src={tupian}
+                        style={{
+                            width:'130px',
+                        }}/></span>   
+                   
                     <div className = "search">
                         <form>
                         <input type="text" className = 'input' />
