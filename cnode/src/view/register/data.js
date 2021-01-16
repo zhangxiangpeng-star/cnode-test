@@ -18,7 +18,7 @@ let data = [{
         </div>
 
         <div class='form-actions'>
-            <input type='submit' class='span-primary' value='注册' />
+            <input type='submit' class='span-primary2' value='注册' />
         </div>
     </form>
 </div>`
